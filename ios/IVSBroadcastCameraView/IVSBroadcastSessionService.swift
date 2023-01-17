@@ -279,8 +279,8 @@ class IVSBroadcastSessionService: NSObject {
       let initialDeviceDescriptorList = getInitialDeviceDescriptorList()
       
       self.broadcastSession = try IVSBroadcastSession(
-        configuration: self.config,
-        descriptors: initialDeviceDescriptorList,
+        configuration: IVSPresets.configurations().standardPortrait(),
+        descriptors: IVSPresets.devices().frontCamera(),
         delegate: self
       )
       
